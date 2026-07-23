@@ -52,6 +52,7 @@ jobs:
 
   model-ci:
     name: Model CI
+    if: github.repository == 'huggingface/transformers'
     uses: ./.github/workflows/self-scheduled.yml
     with:
       job: run_models_gpu
@@ -65,6 +66,7 @@ jobs:
 
   torch-pipeline:
     name: Torch pipeline CI
+    if: github.repository == 'huggingface/transformers'
     uses: ./.github/workflows/self-scheduled.yml
     with:
       job: run_pipelines_torch_gpu
@@ -77,6 +79,7 @@ jobs:
 
   example-ci:
     name: Example CI
+    if: github.repository == 'huggingface/transformers'
     uses: ./.github/workflows/self-scheduled.yml
     with:
       job: run_examples_gpu
@@ -89,6 +92,7 @@ jobs:
 
   trainer-fsdp-ci:
     name: Trainer/FSDP CI
+    if: github.repository == 'huggingface/transformers'
     uses: ./.github/workflows/self-scheduled.yml
     with:
       job: run_trainer_and_fsdp_gpu
@@ -102,6 +106,7 @@ jobs:
 
   deepspeed-ci:
     name: DeepSpeed CI
+    if: github.repository == 'huggingface/transformers'
     uses: ./.github/workflows/self-scheduled.yml
     with:
       job: run_torch_cuda_extensions_gpu
@@ -115,6 +120,7 @@ jobs:
 
   quantization-ci:
     name: Quantization CI
+    if: github.repository == 'huggingface/transformers'
     uses: ./.github/workflows/self-scheduled.yml
     with:
       job: run_quantization_torch_gpu
@@ -127,6 +133,7 @@ jobs:
 
   kernels-ci:
     name: Kernels CI
+    if: github.repository == 'huggingface/transformers'
     uses: ./.github/workflows/self-scheduled.yml
     with:
       job: run_kernels_gpu

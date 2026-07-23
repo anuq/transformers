@@ -24,6 +24,7 @@ permissions:
 jobs:
   latest-docker:
     name: "Latest PyTorch [dev]"
+    if: github.repository == 'huggingface/transformers'
     runs-on:
       group: aws-general-8-plus
     steps:
@@ -62,6 +63,7 @@ jobs:
 
   flash-attn-ci-image:
     name: "PyTorch with Flash Attn [dev]"
+    if: github.repository == 'huggingface/transformers'
     runs-on:
       group: aws-general-8-plus
     steps:
@@ -103,6 +105,7 @@ jobs:
 
   latest-torch-deepspeed-docker:
     name: "Latest PyTorch + DeepSpeed"
+    if: github.repository == 'huggingface/transformers'
     runs-on:
       group: aws-general-8-plus
     steps:
@@ -141,6 +144,7 @@ jobs:
 
   doc-builder:
     name: "Doc builder"
+    if: github.repository == 'huggingface/transformers'
     runs-on:
       group: aws-general-8-plus
     steps:
@@ -177,6 +181,7 @@ jobs:
 
   latest-pytorch-amd:
     name: "Latest PyTorch (AMD) [dev]"
+    if: github.repository == 'huggingface/transformers'
     runs-on:
       group: aws-highcpu-32-priv
     steps:
@@ -215,6 +220,7 @@ jobs:
 
   cache-latest-pytorch-amd:
     name: "Cache Latest Pytorch (AMD) Image"
+    if: github.repository == 'huggingface/transformers'
     needs: latest-pytorch-amd
     runs-on:
       group: amd-mi300-1gpu
@@ -246,6 +252,7 @@ jobs:
 
   latest-pytorch-deepspeed-amd:
     name: "PyTorch + DeepSpeed (AMD) [dev]"
+    if: github.repository == 'huggingface/transformers'
     runs-on:
       group: aws-general-8-plus
     steps:
@@ -284,6 +291,7 @@ jobs:
 
   latest-quantization-torch-docker:
     name: "Latest Pytorch + Quantization [dev]"
+    if: github.repository == 'huggingface/transformers'
     runs-on:
       group: aws-general-8-plus
     steps:

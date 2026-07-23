@@ -53,6 +53,7 @@ jobs:
 
   model-ci:
     name: Model CI
+    if: github.repository == 'huggingface/transformers'
     uses: ./.github/workflows/self-scheduled.yml
     with:
       job: run_models_gpu

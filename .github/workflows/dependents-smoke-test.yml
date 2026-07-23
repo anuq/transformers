@@ -17,6 +17,7 @@ permissions:
 jobs:
   vllm:
     name: Test vLLM integration
+    if: github.repository == 'huggingface/transformers'
     runs-on: ubuntu-latest
 
     steps:

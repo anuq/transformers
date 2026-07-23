@@ -17,7 +17,8 @@ permissions:
 jobs:
   setup:
     name: Setup
-    runs-on: 
+    if: github.repository == 'huggingface/transformers'
+    runs-on:
       group: aws-g5-4xlarge-cache
     container:
       image: huggingface/transformers-all-latest-gpu
@@ -69,7 +70,7 @@ jobs:
   send_results:
     name: Send results to webhook
     runs-on: ubuntu-22.04
-    if: always()
+    if: always() && github.repository == 'huggingface/transformers'
     needs: [call_doctest_job]
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
