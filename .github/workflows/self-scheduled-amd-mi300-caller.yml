@@ -21,6 +21,7 @@ permissions:
 jobs:
   model-ci:
     name: Model CI
+    if: github.repository == 'huggingface/transformers'
     uses: huggingface/hf-workflows/.github/workflows/transformers_amd_ci_scheduled_arc_scale_set.yaml@main
     with:
       job: run_models_gpu
@@ -34,6 +35,7 @@ jobs:
 
   torch-pipeline:
     name: Torch pipeline CI
+    if: github.repository == 'huggingface/transformers'
     uses: huggingface/hf-workflows/.github/workflows/transformers_amd_ci_scheduled_arc_scale_set.yaml@main
     with:
       job: run_pipelines_torch_gpu
@@ -47,6 +49,7 @@ jobs:
 
   example-ci:
     name: Example CI
+    if: github.repository == 'huggingface/transformers'
     uses: huggingface/hf-workflows/.github/workflows/transformers_amd_ci_scheduled_arc_scale_set.yaml@main
     with:
       job: run_examples_gpu
@@ -60,6 +63,7 @@ jobs:
 
   deepspeed-ci:
     name: DeepSpeed CI
+    if: github.repository == 'huggingface/transformers'
     uses: huggingface/hf-workflows/.github/workflows/transformers_amd_ci_scheduled_arc_scale_set.yaml@main
     with:
       job: run_torch_cuda_extensions_gpu

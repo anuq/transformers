@@ -24,6 +24,7 @@ permissions:
 jobs:
   build_nightly_torch_ci_images:
     name: Build CI Docker Images with nightly torch
+    if: github.repository == 'huggingface/transformers'
     uses: ./.github/workflows/build-nightly-ci-docker-images.yml
     with:
       job: latest-with-torch-nightly-docker
@@ -50,6 +51,7 @@ jobs:
 
   model-ci:
     name: Model CI
+    if: github.repository == 'huggingface/transformers'
     needs: build_nightly_torch_ci_images
     uses: ./.github/workflows/self-scheduled.yml
     with:
